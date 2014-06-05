@@ -10,7 +10,7 @@ angular.module('bloopi')
     $scope.messages = [];
 
     $scope.message = {
-      user: $scope.currentUser,
+      user: $scope.currentUser, // should use validation (via backend) later
       content: "",
       image: "",
     };
