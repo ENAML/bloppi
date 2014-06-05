@@ -1,11 +1,13 @@
 'use strict';
 
-angular.module('personalprojectwithgenApp', [
+angular.module('bloopi', [
   'ngCookies',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ngRoute',
+  'btford.socket-io'
 ])
+  .value('nickName', 'anonymous') // DO I NEED THIS?
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
     $routeProvider
       .when('/', {
@@ -28,9 +30,9 @@ angular.module('personalprojectwithgenApp', [
       .otherwise({
         redirectTo: '/'
       });
-      
+
     $locationProvider.html5Mode(true);
-      
+
     // Intercept 401s and redirect you to login
     $httpProvider.interceptors.push(['$q', '$location', function($q, $location) {
       return {
@@ -50,7 +52,7 @@ angular.module('personalprojectwithgenApp', [
 
     // Redirect to login if route requires auth and you're not logged in
     $rootScope.$on('$routeChangeStart', function (event, next) {
-      
+
       if (next.authenticate && !Auth.isLoggedIn()) {
         $location.path('/login');
       }

@@ -4,7 +4,7 @@ var express = require('express'),
     path = require('path'),
     fs = require('fs'),
     mongoose = require('mongoose'),
-    io = require('socket.io');
+    socket = require('./lib/controllers/socket').chat;
 
 /**
  * Main application file
@@ -40,15 +40,17 @@ var server = app.listen(config.port, config.ip, function () {
   console.log('Express server listening on %s:%d, in %s mode', config.ip, config.port, app.get('env'));
 });
 
-var socket = io(server);
+var socketConnect = new socket(server);
 
-socket.on('connection', function(socket){
-  console.log('a user connected');
-  socket.on('chat message', function(msg){
-    console.log(msg);
-    socket.emit('chat message', msg);
-  });
-});
+// var socket = io(server);
+
+// socket.on('connection', function(userSocket){//socket and userSocket must be diff
+//   //console.log('a user connected');
+//   userSocket.on('post message', function(msg){
+//     console.log(msg);
+//     socket.emit('chat message', msg);
+//   });
+// });
 
 // Expose app
 exports = module.exports = app;

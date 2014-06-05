@@ -1,35 +1,26 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron">
-
-  <div class="chatbox">
-    <ul id="messages"></ul>
-    <form action="">
-      <input id="m" autocomplete="off" /><button>Send</button>
-    </form>
+<div class="jumbotron" ng-show="!currentUser">
 
 
 
-  </div>
 
 
-
-<!--   <h1>'Allo, 'Allo <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
-  <p class="lead">
-    <img src="images/yeoman.png" alt="I'm Yeoman"><br>
-    Always a pleasure scaffolding your apps.
-  </p>
-  <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p>
+  <h1>SIGN UP FOR BLOOPI OR DIE TRYING</h1>
 </div>
 
-<div class="row marketing">
-  <div ng-repeat="thing in awesomeThings">
-      <h4>{{thing.name}}</h4>
-      <p>{{thing.info}}</p>
-  </div>
+<!-- <div class="footer">
+  <p>♥ from the Yeoman team</p>
+</div> -->
+
+<div class="chatbox" ng-show="currentUser">
+  <ul id="messages">
+    <li ng-repeat="message in messages track by $index">{{message}}</li>
+  </ul>
+  <form  id="type-box" action="" ng-submit="sendMessage()">
+    <input placeholder="BLOOPY MESSAGE" autocomplete="off" ng-model="message.content" /><button>Send</button>
+  </form>
+<!--   <span ng-show="currentUser">{{ currentUser.name }}</span>! -->
 </div>
 
-<div class="footer">
-  <p>♥ from the Yeoman team</p> -->
-</div>
 <script src="scripts/socketScript.js"></script>

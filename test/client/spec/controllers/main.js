@@ -1,9 +1,9 @@
-'use strict';
+bloopi'use strict';
 
 describe('Controller: MainCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('personalprojectwithgenApp'));
+  beforeEach(module('bloopi'));
 
   var MainCtrl,
     scope,

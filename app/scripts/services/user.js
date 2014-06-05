@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('personalprojectwithgenApp')
+angular.module('bloopi')
   .factory('User', function ($resource) {
     return $resource('/api/users/:id', {
       id: '@id'

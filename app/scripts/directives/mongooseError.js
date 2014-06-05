@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('personalprojectwithgenApp')
+angular.module('bloopi')
 
   /**
    * Removes server error when user updates input

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('personalprojectwithgenApp')
+angular.module('bloopi')
   .controller('SettingsCtrl', function ($scope, User, Auth) {
     $scope.errors = {};
 

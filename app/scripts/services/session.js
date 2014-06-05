@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('personalprojectwithgenApp')
+angular.module('bloopi')
   .factory('Session', function ($resource) {
     return $resource('/api/session/');
   });
