@@ -15,10 +15,17 @@
 
 <div class="chatbox" ng-show="currentUser">
   <ul id="messages">
-    <li ng-repeat="message in messages track by $index">{{message}}</li>
+    <li ng-repeat="message in messages track by $index">
+      <strong>{{message.user.name}}</strong>: {{message.content}}
+      <br ng-show="{{message.image}}" \>
+      <br ng-show="{{message.image}}" \>
+      <img ng-show="{{message.image}}" ng-src="{{message.image}}">
+    </li>
   </ul>
   <form  id="type-box" action="" ng-submit="sendMessage()">
-    <input placeholder="BLOOPY MESSAGE" autocomplete="off" ng-model="message.content" /><button>Send</button>
+    <input placeholder="BLOOPY MESSAGE" class="msgInput" autocomplete="off" ng-model="message.content" />
+    <input placeholder="IMAGE URL" autocomplete="off" class="msgInput" ng-model="message.image" />
+    <button>Send</button>
   </form>
 <!--   <span ng-show="currentUser">{{ currentUser.name }}</span>! -->
 </div>

@@ -16,14 +16,16 @@ angular.module('bloopi')
     };
 
     socket.on('chat message', function(msg) {
-      console.log(msg);
-      $scope.messages.push(msg.user.name + ": " + msg.content);
+      //console.log(msg);
+      $scope.messages.push(msg);
       $scope.$apply();
+      window.scrollTo(0,document.body.scrollHeight);
     });
 
     $scope.sendMessage = function() {
-      console.log($scope.message);
+      //console.log($scope.message);
       socket.emit('post message', $scope.message);
       $scope.message.content = '';
+      $scope.message.image = '';
     };
   });
