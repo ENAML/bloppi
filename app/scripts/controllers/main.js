@@ -28,4 +28,10 @@ angular.module('bloopi')
       $scope.message.content = '';
       $scope.message.image = '';
     };
+
+    // $scope.pickFile = function() {
+    //   filepicker.pick(function(InkBlob){
+    //     console.log(InkBlob.url);
+    //   });
+    // };
   });
