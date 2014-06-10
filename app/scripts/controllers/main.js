@@ -4,6 +4,7 @@ angular.module('bloopi')
   .controller('MainCtrl', function ($scope, $http) {
 
     var socket = io();
+    filepicker.setKey("AZJi35K99RVGyLe7OmIeEz");
 
     $scope.messages = [];
 
@@ -25,6 +26,24 @@ angular.module('bloopi')
       socket.emit('post message', $scope.message);
       $scope.message.content = '';
       $scope.message.image = '';
+    };
+
+    $scope.uploadImage = function() {
+      filepicker.pick({
+          mimetypes: ['image/*', 'text/plain'],
+          //container: 'window',
+          services:['COMPUTER'],
+        },
+        function(InkBlob){
+          console.log(JSON.stringify(InkBlob.url));
+          var url = JSON.stringify(InkBlob.url); //remove quotes from string
+          $scope.message.image = url.substring(1, url.length-1);
+          $scope.$apply();
+        },
+        function(FPError){
+          console.log(FPError.toString());
+        }
+      );
     };
 
     // $scope.pickFile = function() {

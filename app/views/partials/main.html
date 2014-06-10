@@ -1,11 +1,6 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="jumbotron" ng-show="!currentUser">
-
-
-
-
-
   <h1>SIGN UP FOR BLOOPI OR DIE TRYING</h1>
 </div>
 
@@ -22,16 +17,22 @@
       <img ng-show="{{message.image != ''}}" ng-src="{{message.image}}">
     </li>
   </ul>
-  <form  id="type-box" action="" ng-submit="sendMessage()">
-    <input placeholder="BLOOPY MESSAGE" class="msgInput" autocomplete="off" ng-model="message.content" />
-    <input placeholder="IMAGE URL" autocomplete="off" class="msgInput" ng-model="message.image" />
-    <button>Send</button>
-  </form>
+
 
 <!--   <form  id="type-box" action="" ng-submit="pickFile()">
     <button>Upload File</button>
   </form> -->
 <!--   <span ng-show="currentUser">{{ currentUser.name }}</span>! -->
 </div>
+
+<button ng-click="uploadImage()">Upload Image</button>
+
+<br><br><br><br>
+
+<form  id="type-box" action="" ng-submit="sendMessage()">
+  <input placeholder="BLOOPY MESSAGE" class="msgInput" autocomplete="off" ng-model="message.content" />
+  <input placeholder="IMAGE URL" autocomplete="off" class="msgInput" ng-model="message.image" />
+  <button>Send</button>
+</form>
 
 <script src="scripts/socketScript.js"></script>
