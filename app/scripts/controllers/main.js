@@ -1,8 +1,9 @@
 'use strict';
 
 angular.module('bloopi')
-  .controller('MainCtrl', function ($scope, $http) {
+  .controller('MainCtrl', function ($scope) {
 
+    //setup code
     var socket = io();
     filepicker.setKey("AZJi35K99RVGyLe7OmIeEz");
 
@@ -20,6 +21,8 @@ angular.module('bloopi')
       $scope.$apply();
       window.scrollTo(0,document.body.scrollHeight);
     });
+
+    socket.emit("populate", "population notice");
 
     $scope.sendMessage = function() {
       //console.log($scope.message);

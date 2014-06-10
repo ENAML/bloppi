@@ -25,14 +25,14 @@
 <!--   <span ng-show="currentUser">{{ currentUser.name }}</span>! -->
 </div>
 
-<button ng-click="uploadImage()">Upload Image</button>
+
 
 <br><br><br><br>
 
 <form  id="type-box" action="" ng-submit="sendMessage()">
   <input placeholder="BLOOPY MESSAGE" class="msgInput" autocomplete="off" ng-model="message.content" />
   <input placeholder="IMAGE URL" autocomplete="off" class="msgInput" ng-model="message.image" />
-  <button>Send</button>
+  <input type="button" ng-click="uploadImage()" value="Upload Image" />
+  <button type="submit" >Send</button>
 </form>
 
-<script src="scripts/socketScript.js"></script>

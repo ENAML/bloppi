@@ -23,8 +23,8 @@ body {
   margin-right: 1px;
 }
 
-#type-box button {
-  width: 9.9%;
+#type-box button, #type-box input[type=button] {
+  width: 7%;
   background: rgb(130, 224, 255);
   border: 1px black;
   padding: 10px;

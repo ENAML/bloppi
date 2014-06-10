@@ -16,6 +16,7 @@ angular.module('bloopi')
         .then( function() {
           // Logged in, redirect to home
           $location.path('/');
+
         })
         .catch( function(err) {
           err = err.data;
