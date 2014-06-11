@@ -17,8 +17,8 @@
   <ul id="messages">
     <li ng-repeat="message in messages track by $index">
       <span class="username">{{message.user.name}}:</span> {{message.content}}
-      <br ng-show="{{message.image != ''}}" \>
-      <br ng-show="{{message.image != ''}}" \>
+      <br ng-show="{{message.image != ''}}" />
+      <br ng-show="{{message.image != ''}}" />
       <center><img ng-show="{{message.image != ''}}" ng-src="{{message.image}}"></center>
     </li>
   </ul>
