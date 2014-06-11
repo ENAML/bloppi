@@ -1,7 +1,11 @@
 <div ng-include="'partials/navbar'"></div>
 
-<div class="jumbotron" ng-show="!currentUser">
-  <h1>SIGN UP FOR BLOOPI OR DIE TRYING</h1>
+
+
+<br><br><br><br><br><br><br><br>
+
+<div class="jumbotron jumbo" ng-show="!currentUser">
+  <h2>SIGN UP FOR BLOOPI OR DIE TRYING</h2>
 </div>
 
 <!-- <div class="footer">
@@ -29,10 +33,15 @@
 
 <br><br><br><br>
 
-<form  id="type-box" action="" ng-submit="sendMessage()">
-  <input placeholder="BLOOPY MESSAGE" class="msgInput" autocomplete="off" ng-model="message.content" />
-  <input placeholder="IMAGE URL" autocomplete="off" class="msgInput" ng-model="message.image" />
-  <input type="button" ng-click="uploadImage()" value="Upload Image" />
-  <button type="submit" >Send</button>
-</form>
 
+<footer ng-show="currentUser">
+
+    <form ng-show="currentUser" id="type-box" action="" ng-submit="sendMessage()">
+      <input placeholder="BLOOPY MESSAGE" class="form-control input-lg" autocomplete="off" ng-model="message.content" />
+      <input placeholder="IMAGE URL" autocomplete="off" class="form-control input-lg" ng-model="message.image" />
+      <input type="button" class="btn btn-lg btn-primary" ng-click="uploadImage()" value="Upload Image" />
+      <button type="submit" class="btn btn-lg btn-primary" >Send</button>
+    </form>
+
+</footer>
+<div id="gradient"></div>
