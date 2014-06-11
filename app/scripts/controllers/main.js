@@ -29,6 +29,7 @@ angular.module('bloopi')
       socket.emit('post message', $scope.message);
       $scope.message.content = '';
       $scope.message.image = '';
+      window.scrollTo(0,document.body.scrollHeight);
     };
 
     $scope.uploadImage = function() {

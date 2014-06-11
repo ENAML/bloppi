@@ -2,8 +2,8 @@
 
 
 
-<br><br><br><br><br><br><br><br>
 
+<span ng-show="!currentUser" ><br /><br /><br /><br /><br /><br /><br /><br /></span>
 <div class="jumbotron jumbo" ng-show="!currentUser">
   <h2>SIGN UP FOR BLOOPI OR DIE TRYING</h2>
 </div>
@@ -13,14 +13,16 @@
 </div> -->
 
 <div class="chatbox" ng-show="currentUser">
+  <br /><br /><br />
   <ul id="messages">
     <li ng-repeat="message in messages track by $index">
-      <strong>{{message.user.name}}</strong>: {{message.content}}
+      <span class="username">{{message.user.name}}:</span> {{message.content}}
       <br ng-show="{{message.image != ''}}" \>
       <br ng-show="{{message.image != ''}}" \>
-      <img ng-show="{{message.image != ''}}" ng-src="{{message.image}}">
+      <center><img ng-show="{{message.image != ''}}" ng-src="{{message.image}}"></center>
     </li>
   </ul>
+  <br /><br /><br /><br />
 
 
 <!--   <form  id="type-box" action="" ng-submit="pickFile()">
@@ -31,16 +33,25 @@
 
 
 
-<br><br><br><br>
 
 
 <footer ng-show="currentUser">
 
-    <form ng-show="currentUser" id="type-box" action="" ng-submit="sendMessage()">
-      <input placeholder="BLOOPY MESSAGE" class="form-control input-lg" autocomplete="off" ng-model="message.content" />
-      <input placeholder="IMAGE URL" autocomplete="off" class="form-control input-lg" ng-model="message.image" />
-      <input type="button" class="btn btn-lg btn-primary" ng-click="uploadImage()" value="Upload Image" />
-      <button type="submit" class="btn btn-lg btn-primary" >Send</button>
+    <form id="type-box" action="" ng-submit="sendMessage()">
+      <ul>
+        <li>
+          <input placeholder="BLOOPY MESSAGE" class="form-control input-lg" autocomplete="off" ng-model="message.content" />
+        </li>
+        <li>
+          <input placeholder="IMAGE URL" autocomplete="off" class="form-control input-lg" ng-model="message.image" />
+        </li>
+        <li>
+          <input type="button" class="btn btn-lg btn-primary" ng-click="uploadImage()" value="Upload Image" />
+        </li>
+        <li>
+          <button type="submit" class="btn btn-lg btn-primary" >Send</button>
+        </li>
+      </ul>
     </form>
 
 </footer>
