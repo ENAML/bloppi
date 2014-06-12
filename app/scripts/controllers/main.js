@@ -36,7 +36,7 @@ angular.module('bloopi')
       filepicker.pick({
           mimetypes: ['image/*', 'text/plain'],
           //container: 'window',
-          services:['COMPUTER'],
+          services:['URL','COMPUTER', 'FACEBOOK', 'INSTAGRAM'],
         },
         function(InkBlob){
           console.log(JSON.stringify(InkBlob.url));

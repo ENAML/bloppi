@@ -19,7 +19,7 @@
       <span class="username">{{message.user.name}}:</span> {{message.content}}
       <br ng-show="{{message.image != ''}}" />
       <br ng-show="{{message.image != ''}}" />
-      <center><img ng-show="{{message.image != ''}}" ng-src="{{message.image}}"></center>
+      <center><img ng-show="message.image != ''" ng-src="{{message.image}}"></center>
     </li>
   </ul>
   <br /><br /><br /><br />
@@ -31,7 +31,11 @@
 <!--   <span ng-show="currentUser">{{ currentUser.name }}</span>! -->
 </div>
 
-
+<div class="previewImg" ng-show="message.image != ''">
+  <span class="previewText">Image Preview:</span>
+  <br /><br />
+  <img ng-if="message.image != ''" ng-src="{{message.image}}">
+</div>
 
 
 
@@ -40,13 +44,13 @@
     <form id="type-box" action="" ng-submit="sendMessage()">
       <ul>
         <li>
-          <input placeholder="BLOOPY MESSAGE" class="form-control input-lg" autocomplete="off" ng-model="message.content" />
+          <input placeholder="BLOOPI MESSAGE" class="form-control input-lg" autocomplete="off" ng-model="message.content" />
         </li>
-        <li>
+<!--         <li>
           <input placeholder="IMAGE URL" autocomplete="off" class="form-control input-lg" ng-model="message.image" />
-        </li>
+        </li> -->
         <li>
-          <input type="button" class="btn btn-lg btn-primary" ng-click="uploadImage()" value="Upload Image" />
+          <input type="button" class="btn btn-lg btn-primary" ng-click="uploadImage()" value="Image" />
         </li>
         <li>
           <button type="submit" class="btn btn-lg btn-primary" >Send</button>

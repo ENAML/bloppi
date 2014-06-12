@@ -38,6 +38,23 @@ html,body {
 
 // UNORGANIZED
 
+.previewImg {
+  background-color: #282828;
+  position: fixed;
+  padding: 15px;
+  right: 15px;
+  bottom: 95px;
+}
+
+.previewImg img {
+  font-size: 1.2em;
+  max-width: 400px;
+}
+
+.previewText {
+  color: #F35462;
+}
+
 footer {
   position: fixed;
   width: 100%;
@@ -63,9 +80,9 @@ footer .form-control {
   width: 12%;
   margin-left: 0px;
 }
-#type-box li:nth-child(1), #type-box li:nth-child(2) {
+#type-box li:nth-child(1) {
   display: inline-block;
-  width: 34%;
+  width: 70%;
 
 }
 
