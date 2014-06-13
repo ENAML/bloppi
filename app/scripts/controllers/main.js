@@ -15,10 +15,6 @@ angular.module('bloopi')
       image: "",
     };
 
-    socket.on('connection' , function() {
-      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
-    });
-
     socket.on('chat message', function(msg) {
       //console.log(msg);
       $scope.messages.push(msg);
@@ -59,4 +55,5 @@ angular.module('bloopi')
     //     console.log(InkBlob.url);
     //   });
     // };
+
   });
