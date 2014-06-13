@@ -14,8 +14,8 @@
 
 <div class="chatbox" ng-show="currentUser">
   <br /><br /><br />
-  <ul id="messages">
-    <li ng-repeat="message in messages track by $index">
+  <ul id="messages" masonry masonry-options="{ transitionDuration: '.2s'}" column-width="800">
+    <li ng-repeat="message in messages track by $index" class="masonry-brick">
       <span class="username">{{message.user.name}}:</span> {{message.content}}
       <br ng-show="{{message.image != ''}}" />
       <br ng-show="{{message.image != ''}}" />

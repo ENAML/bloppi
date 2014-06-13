@@ -18,6 +18,7 @@
     <!-- build:css({.tmp,app}) styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="styles/holo.css">
+    <link rel="stylesheet" href="styles/animate.css">
     <link rel="stylesheet" href="styles/customStuff.css">
     <!-- endbuild -->
   </head>
@@ -46,6 +47,7 @@
     <![endif]-->
     <script type="text/javascript" src="//api.filepicker.io/v1/filepicker.js"></script>
     <script src="bower_components/socket.io-client/socket.io.js"></script>
+
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -55,6 +57,17 @@
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-socket-io/socket.js"></script>
+    <script src="bower_components/get-style-property/get-style-property.js"></script>
+    <script src="bower_components/get-size/get-size.js"></script>
+    <script src="bower_components/eventie/eventie.js"></script>
+    <script src="bower_components/doc-ready/doc-ready.js"></script>
+    <script src="bower_components/eventEmitter/EventEmitter.js"></script>
+    <script src="bower_components/jquery-bridget/jquery.bridget.js"></script>
+    <script src="bower_components/matches-selector/matches-selector.js"></script>
+    <script src="bower_components/outlayer/item.js"></script>
+    <script src="bower_components/outlayer/outlayer.js"></script>
+    <script src="bower_components/masonry/masonry.js"></script>
+    <script src="bower_components/imagesloaded/imagesloaded.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -71,11 +84,11 @@
         <script src="scripts/directives/mongooseError.js"></script>
 
         <script src="scripts/socketScript.js"></script>
-
+        <script src="bower_components/angular-masonry/angular-masonry.js"></script>
         <!-- endbuild -->
 
         <!-- background gradient -->
-        // <script type="text/javascript">
+        <script type="text/javascript">
         //   var colors = new Array(
         //     [62,35,255],
         //     [60,255,60],

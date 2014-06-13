@@ -5,7 +5,8 @@ angular.module('bloopi', [
   'ngResource',
   'ngSanitize',
   'ngRoute',
-  'btford.socket-io'
+  'btford.socket-io',
+  'wu.masonry'
 ])
   .value('nickName', 'anonymous') // DO I NEED THIS?
   .config(function ($routeProvider, $locationProvider, $httpProvider) {
