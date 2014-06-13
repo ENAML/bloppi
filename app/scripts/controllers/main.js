@@ -15,11 +15,15 @@ angular.module('bloopi')
       image: "",
     };
 
+    socket.on('connection' , function() {
+      $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+    });
+
     socket.on('chat message', function(msg) {
       //console.log(msg);
       $scope.messages.push(msg);
       $scope.$apply();
-      window.scrollTo(0,document.body.scrollHeight);
+
     });
 
     socket.emit("populate", "population notice");
@@ -29,7 +33,7 @@ angular.module('bloopi')
       socket.emit('post message', $scope.message);
       $scope.message.content = '';
       $scope.message.image = '';
-      window.scrollTo(0,document.body.scrollHeight);
+      $('html, body').animate({scrollTop:$(document).height()}, 'slow');
     };
 
     $scope.uploadImage = function() {

@@ -14,8 +14,8 @@
 
 <div class="chatbox" ng-show="currentUser">
   <br /><br /><br />
-  <ul id="messages" masonry masonry-options="{ transitionDuration: '.2s'}" column-width="800">
-    <li ng-repeat="message in messages track by $index" class="masonry-brick">
+  <ul id="messages" class="animated fadeInUp">
+    <li ng-repeat="message in messages track by $index" class="animated fadeInUp">
       <span class="username">{{message.user.name}}:</span> {{message.content}}
       <br ng-show="{{message.image != ''}}" />
       <br ng-show="{{message.image != ''}}" />
@@ -31,7 +31,7 @@
 <!--   <span ng-show="currentUser">{{ currentUser.name }}</span>! -->
 </div>
 
-<div class="previewImg" ng-show="message.image != ''">
+<div class="previewImg animated" ng-show="message.image != ''" ng-class="{ 'fadeInUp' : message.length != '' }">
   <span class="previewText">Image Preview:</span>
   <br /><br />
   <img ng-if="message.image != ''" ng-src="{{message.image}}">
